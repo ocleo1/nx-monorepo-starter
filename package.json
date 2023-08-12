@@ -1,0 +1,30 @@
+{
+  "name": "lerna-monorepo-starter",
+  "scripts": {
+    "build": "lerna run build",
+    "build:dev": "lerna run build:dev",
+    "start": "lerna run start",
+    "start:live": "lerna run start:live",
+    "lint": "lerna run lint",
+    "lint:fix": "lerna run lint:fix"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "ocleo1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ocleo1/lerna-monorepo-starter.git"
+  },
+  "engines": {
+    "node": ">=16",
+    "typescript": ">4.5"
+  },
+  "workspaces": [
+    "apps/*",
+    "libs/*"
+  ],
+  "devDependencies": {
+    "lerna": "^6.4.1"
+  }
+}
