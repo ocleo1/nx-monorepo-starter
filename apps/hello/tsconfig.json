@@ -4,6 +4,6 @@
     "outDir": "./dist/cjs",
     "rootDir": "./src"
   },
-  "include": ["./src"],
+  "include": ["./src", "manipulations.d.ts"],
   "exclude": ["node_modules"]
 }
