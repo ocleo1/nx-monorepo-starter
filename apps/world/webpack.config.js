@@ -7,7 +7,7 @@ module.exports = {
   },
 
   output: {
-    publicPath: 'http://localhost:8080/'
+    publicPath: 'http://localhost:8081/'
   },
 
   resolve: {
@@ -15,7 +15,7 @@ module.exports = {
   },
 
   devServer: {
-    port: 8080,
+    port: 8081,
     historyApiFallback: true,
     headers: {
       'Access-Control-Allow-Origin': '*',
@@ -32,8 +32,10 @@ module.exports = {
           {
             loader: "postcss-loader",
             options: {
-              ident: "postcss",
-              plugins: [autoprefixer()],
+              postcssOptions: {
+                ident: "postcss",
+                plugins: [autoprefixer()]
+              }
             }
           },
           "sass-loader"

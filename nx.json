@@ -1,0 +1,35 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "targetDefaults": {
+    "serve": {
+      "dependsOn": ["build"]
+    },
+    "build": {
+      "dependsOn": [
+        "^build",
+        "lint:fix"
+      ],
+      "outputs": [
+        "{projectRoot}/dist"
+      ],
+      "cache": true
+    },
+    "build:dev": {
+      "dependsOn": [
+        "^build:dev",
+        "lint:fix"
+      ],
+      "outputs": [
+        "{projectRoot}/dist"
+      ],
+      "cache": true
+    },
+    "lint": {
+      "cache": true
+    },
+    "lint:fix": {
+      "cache": true
+    }
+  },
+  "defaultBase": "main"
+}

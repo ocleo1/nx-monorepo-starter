@@ -1,12 +1,12 @@
 {
-  "name": "lerna-monorepo-starter",
+  "name": "nx-monorepo-starter",
+  "type": "module",
   "scripts": {
-    "build": "lerna run build",
-    "build:dev": "lerna run build:dev",
-    "start": "lerna run start",
-    "start:live": "lerna run start:live",
-    "lint": "lerna run lint",
-    "lint:fix": "lerna run lint:fix"
+    "build": "nx run-many -t build",
+    "build:dev": "nx run-many -t build:dev",
+    "serve": "nx run-many -t serve",
+    "lint": "nx run-many -t lint",
+    "lint:fix": "nx run-many -t lint:fix"
   },
   "license": "MIT",
   "author": {
@@ -14,17 +14,31 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ocleo1/lerna-monorepo-starter.git"
+    "url": "git+https://github.com/ocleo1/nx-monorepo-starter.git"
   },
   "engines": {
-    "node": ">=16",
-    "typescript": ">4.5"
+    "node": ">=20",
+    "typescript": ">=5.5"
   },
   "workspaces": [
     "apps/*",
     "libs/*"
   ],
   "devDependencies": {
-    "lerna": "^6.4.1"
+    "@babel/plugin-transform-runtime": "^7.25.9",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.26.3",
+    "@babel/preset-typescript": "^7.26.0",
+    "@nx/eslint": "20.3.1",
+    "@nx/web": "20.3.1",
+    "@nx/webpack": "20.3.1",
+    "eslint": "^9.17.0",
+    "eslint-plugin-react": "^7.37.3",
+    "globals": "^15.14.0",
+    "html-webpack-plugin": "^5.6.3",
+    "nx": "20.3.1",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.19.1",
+    "webpack-cli": "^5.1.4"
   }
 }

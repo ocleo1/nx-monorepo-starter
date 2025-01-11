@@ -9,10 +9,10 @@
     "compile:live": "tsc -p tsconfig.json -watch && tsc -p tsconfig-cjs.json -watch",
     "build": "npm run compile",
     "build:dev": "npm run compile",
-    "start": "npm run compile",
-    "start:live": "npm run compile:live",
-    "lint": "eslint --ext .ts,.tsx src",
-    "lint:fix": "eslint --fix --ext .ts,.tsx src"
+    "serve": "npm run compile",
+    "serve:live": "npm run compile:live",
+    "lint": "eslint src",
+    "lint:fix": "eslint --fix src"
   },
   "license": "MIT",
   "author": {
@@ -24,19 +24,12 @@
     "README.md"
   ],
   "engines": {
-    "node": ">=16",
-    "typescript": ">4.5"
+    "node": ">=20",
+    "typescript": ">=5.5"
   },
   "sideEffects": false,
   "peerDependencies": {
     "@example-lib/utils": "*",
     "@reduxjs/toolkit": "~1.8.6"
-  },
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.27.0",
-    "@typescript-eslint/parser": "^4.27.0",
-    "eslint": "^7.32.0",
-    "eslint-plugin-react": "^7.32.0",
-    "typescript": "^4.5.2"
   }
 }

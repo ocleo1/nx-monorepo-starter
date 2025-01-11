@@ -1,26 +1,46 @@
-# Lerna Monorepo Starter
+# Nx Monorepo Starter
+
+Nx monorepo using workspaces, but different from official demo
+
+1. using `apps` and `libs`
+2. extending `tsconfig.base.json`
+
+See
+
+- https://nx.dev/getting-started/tutorials/npm-workspaces-tutorial
+- https://nx.dev/getting-started/tutorials/react-monorepo-tutorial
 
 ## Requirements
 
-- npm >=7. It starts support workspace. Node v16 shipped with npm v8, recommended.
-- lerna =6. v7 has bootstrap and other commands deprecated.
-- Others. Check `package.json` engines.
-
-## Initialization
-
-1. `npx lerna@6 clean --yes`
-2. `npx lerna@6 bootstrap --force-local`
-
-## Run locally
-
-1. `npx lerna@6 run build`
-2. `cd apps/<app_name>`
-3. `npm run start`
+1. `package.json` engines
+2. only `devDependencies` in root `package.json`
 
 ## Build
 
-1. `npx nx graph`. Check dependency graph, make sure there are no circular dependencies
-2. `npx lerna@6 run build`
+`npx nx graph`. Check dependency graph, make sure there are no circular dependencies
+
+### Production
+
+`npx nx run-many -t build`
+
+### Development
+
+`npx nx run-many -t build:dev`
+
+## Run
+
+### Production
+
+1. `npx nx run @example-app/hello:build --graph`
+2. `npx nx build @example-app/hello` or `npx nx run @example-app/hello:build`
+3. `npx nx serve @example-app/hello` or `npx nx run @example-app/hello:serve`
+
+### Development
+
+1. `npx nx run-many -t build:dev`
+2. `npx nx run @example-app/hello:build:dev --graph`
+3. `npx nx serve:live @example-lib/components` or `npx nx run @example-lib/components:serve:live` and other libs
+4. open another terminal. `npx nx serve:live @example-app/hello` or `npx nx run @example-app/hello:serve:live`
 
 ## Architecture
 

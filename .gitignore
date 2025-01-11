@@ -4,7 +4,6 @@ logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-lerna-debug.log*
 .pnpm-debug.log*
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
@@ -129,5 +128,7 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-# lerna-monorepo-starter
+# nx-monorepo-starter
 .DS_Store
+.nx/cache
+.nx/workspace-data
