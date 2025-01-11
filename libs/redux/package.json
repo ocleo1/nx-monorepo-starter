@@ -29,7 +29,12 @@
   },
   "sideEffects": false,
   "peerDependencies": {
-    "@example-lib/utils": "*",
-    "@reduxjs/toolkit": "~1.8.6"
+    "@reduxjs/toolkit": "2.2.2"
+  },
+  "devDependencies": {
+    "@reduxjs/toolkit": "2.2.2"
+  },
+  "dependencies": {
+    "@example-lib/utils": "*"
   }
 }

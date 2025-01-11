@@ -29,9 +29,11 @@
   },
   "sideEffects": false,
   "peerDependencies": {
-    "react": "^17.0.2"
+    "@types/react": "^18.3.18",
+    "react": "^18.3.0"
   },
   "devDependencies": {
-    "react": "^17.0.2"
+    "@types/react": "^18.3.18",
+    "react": "^18.3.0"
   }
 }

@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route, useRoutes } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
@@ -29,4 +29,4 @@ export default function App() {
   );
 }
 
-ReactDOM.render(<App />, document.getElementById('hello-root'));
+createRoot(document.getElementById('hello-root')!).render(<App />);

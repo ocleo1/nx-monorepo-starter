@@ -1,6 +1,8 @@
 import PageOne from './pages/One';
 
-const routes = [
+import type { RouteObject } from 'react-router-dom';
+
+const routes: RouteObject[] = [
   {
     index: true,
     element: <PageOne />

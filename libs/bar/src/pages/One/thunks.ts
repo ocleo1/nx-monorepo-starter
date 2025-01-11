@@ -1,15 +1,19 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { get } from '@example-lib/utils';
+import { axiosInst } from '@example-lib/utils';
 
 
-export const fetchOneName = createAsyncThunk<
-{ name: string },
-void,
-{ rejectValue: string }
->('bar/one/fetchOneName', async (_, { rejectWithValue }) => {
-  const resp = await get('/bar/one');
-  if (resp.error) {
-    return rejectWithValue(resp.Error);
+export const fetchOneName = createAsyncThunk<{ name: string }, void, { rejectValue: string }>(
+  'bar/one/fetchOneName',
+  async (_, { rejectWithValue }) => {
+    const data = await getBarOne();
+    if (data.error) {
+      return rejectWithValue(data.error);
+    }
+    return data.result;
   }
-  return resp.result;
-});
+);
+
+async function getBarOne() {
+  const resp = await axiosInst.get('/bar/one');
+  return resp.data;
+}
