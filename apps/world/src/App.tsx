@@ -6,6 +6,10 @@ import { Provider } from 'react-redux';
 import { InjectReducer } from './HOC/InjectReducer';
 import { worldStore } from './store';
 
+import './index.css';
+import '@example-lib/bar/dist/styles/bar.scss';
+
+
 const BarRoutes = React.lazy(() => import(
   /* webpackChunkName: "bar" */
   '@example-lib/bar'

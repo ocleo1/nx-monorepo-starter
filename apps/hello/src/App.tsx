@@ -6,6 +6,10 @@ import { Provider } from 'react-redux';
 import { InjectReducer } from './HOC/InjectReducer';
 import { helloStore } from './store';
 
+import './index.css';
+import '@example-lib/foo/dist/styles/foo.scss';
+
+
 const FooRoutes = React.lazy(() => import(
   /* webpackChunkName: "foo" */
   '@example-lib/foo'

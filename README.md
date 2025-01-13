@@ -27,6 +27,13 @@ See
 
 `npx nx run-many -t build:dev`
 
+### CSS
+
+If webpack is not bundling css from node_modules, see below
+
+- https://stackoverflow.com/a/67649823/6277806
+- https://stackoverflow.com/a/56602748/6277806
+
 ## Run
 
 ### Production
