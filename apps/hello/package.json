@@ -2,10 +2,10 @@
   "name": "@example-app/hello",
   "version": "1.0.0",
   "scripts": {
-    "build": "cross-env webpack --mode production",
-    "build:dev": "cross-env webpack --mode development",
-    "serve": "cross-env webpack serve --open --mode production",
-    "serve:live": "cross-env webpack serve --open --mode development --live-reload --hot",
+    "build": "cross-env NODE_ENV=production webpack",
+    "build:dev": "cross-env NODE_ENV=development webpack",
+    "serve": "cross-env NODE_ENV=production webpack serve --open",
+    "serve:live": "cross-env NODE_ENV=development webpack serve --open --live-reload --hot",
     "lint": "eslint src",
     "lint:fix": "eslint --fix src"
   },

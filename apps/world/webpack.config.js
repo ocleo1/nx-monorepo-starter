@@ -1,5 +1,8 @@
-const config = require("../../webpack.base");
+const path = require("node:path");
+const getConfig = require("../../webpack.base");
 
+
+const config = getConfig(__dirname, 8081);
 
 /** @type {import('webpack').Configuration} */
 module.exports = {
@@ -7,11 +10,11 @@ module.exports = {
   entry: {
     world: './src/App.tsx'
   },
-  output: {
-    publicPath: 'http://localhost:8081/'
-  },
-  devServer: {
-    ...config.devServer,
-    port: 8081
+  resolve: {
+    ...config.resolve,
+    alias: {
+      "@/components": path.resolve(__dirname, 'src/components/'),
+      "@/utils": path.resolve(__dirname, 'src/utils.ts')
+    }
   }
 };
