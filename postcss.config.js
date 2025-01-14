@@ -3,7 +3,8 @@ module.exports = {
   plugins: {
     // https://github.com/postcss/postcss-import
     'postcss-import': {},
-    'postcss-nested': {},
+    // https://tailwindcss.com/docs/using-with-preprocessors#nesting
+    'tailwindcss/nesting': 'postcss-nested',
     tailwindcss: {},
     autoprefixer: {}
   }

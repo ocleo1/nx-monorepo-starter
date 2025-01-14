@@ -1,6 +1,7 @@
 const path = require("path");
 const { DefinePlugin } = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
@@ -103,6 +104,7 @@ module.exports = function getConfig(baseDir, port) {
     config.plugins.push(new MiniCssExtractPlugin({
       filename: "main.[contenthash:8].css"
     }));
+    config.optimization.minimizer = [new CssMinimizerPlugin()];
     config.optimization.splitChunks = {
       chunks: 'all',
       maxInitialRequests: Infinity,
