@@ -5,7 +5,7 @@
     "build": "cross-env NODE_ENV=production webpack",
     "build:dev": "cross-env NODE_ENV=development webpack",
     "serve": "cross-env NODE_ENV=production webpack serve --open",
-    "serve:live": "cross-env NODE_ENV=development webpack serve --open --live-reload --hot",
+    "watch:serve": "cross-env NODE_ENV=development webpack serve --open --live-reload --hot",
     "lint": "eslint src",
     "lint:fix": "eslint --fix src"
   },
