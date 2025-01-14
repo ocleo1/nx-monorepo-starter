@@ -7,6 +7,7 @@
     "build": {
       "dependsOn": [
         "^build",
+        "^build:css",
         "lint:fix"
       ],
       "outputs": [
@@ -17,6 +18,7 @@
     "build:dev": {
       "dependsOn": [
         "^build:dev",
+        "^build:css",
         "lint:fix"
       ],
       "outputs": [

@@ -7,7 +7,8 @@ import { InjectReducer } from './HOC/InjectReducer';
 import { helloStore } from './store';
 
 import './index.css';
-import '@example-lib/foo/dist/styles/foo.scss';
+// https://www.thehalftimecode.com/sharing-tailwind-css-and-components-across-apps-in-a-monorepo/
+import '@example-lib/foo/styles.css';
 
 
 const FooRoutes = React.lazy(() => import(

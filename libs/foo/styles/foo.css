@@ -1,0 +1,8 @@
+@import "./website.css";
+
+.foo-overlay {
+  max-height: 300px;
+  & > .content {
+    color: red;
+  }
+}

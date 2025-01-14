@@ -28,27 +28,17 @@ module.exports = function getConfig(baseDir, port) {
             }
           }
         },
-        // https://stackoverflow.com/a/68273109/6277806
         {
-          test: /\.s?css$/i,
+          test: /\.css$/i,
           use: [
-            isProd ? MiniCssExtractPlugin.loader : "style-loader",
-            {
-              loader: "css-loader",
-              options: {
-                importLoaders: 2,
-                sourceMap: !isProd
-              }
-            },
-            {
-              loader: "postcss-loader",
-              options: {
-                postcssOptions: {
-                  ident: "postcss",
-                  plugins: [autoprefixer()]
-                }
-              }
-            },
+            ...getCommonCssConfig(isProd),
+            "postcss-loader"
+          ]
+        },
+        {
+          test: /\.scss$/i,
+          use: [
+            ...getCommonCssConfig(isProd),
             {
               loader: "sass-loader",
               options: {
@@ -157,3 +147,17 @@ module.exports = function getConfig(baseDir, port) {
 
   return config;
 };
+
+function getCommonCssConfig(isProd) {
+  return [
+    isProd ? MiniCssExtractPlugin.loader : "style-loader",
+    {
+      loader: "css-loader",
+      options: {
+        // https://stackoverflow.com/a/68273109/6277806
+        importLoaders: 2,
+        sourceMap: !isProd
+      }
+    }
+  ];
+}

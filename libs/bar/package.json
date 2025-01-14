@@ -5,14 +5,23 @@
   "module": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
   "scripts": {
-    "compile": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json && cp -r styles dist/",
-    "compile:live": "tsc -p tsconfig.json -watch && tsc -p tsconfig-cjs.json -watch && cp -r styles dist/",
+    "compile": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
+    "compile:live": "tsc -p tsconfig.json -watch && tsc -p tsconfig-cjs.json -watch",
     "build": "npm run compile",
     "build:dev": "npm run compile",
+    "build:css": "sass styles/bar.scss:dist/styles.css",
+    "watch:css": "sass styles/bar.scss:dist/styles.css --watch",
     "serve": "npm run compile",
     "serve:live": "npm run compile:live",
     "lint": "eslint src",
     "lint:fix": "eslint --fix src"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./styles.css": "./dist/styles.css"
   },
   "license": "MIT",
   "author": {
