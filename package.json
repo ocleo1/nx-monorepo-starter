@@ -1,6 +1,5 @@
 {
   "name": "nx-monorepo-starter",
-  "type": "module",
   "scripts": {
     "build": "nx run-many -t build",
     "build:dev": "nx run-many -t build:dev",
