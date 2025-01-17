@@ -46,15 +46,15 @@ If webpack is not bundling css from node_modules, see below
 
 1. `npx nx run-many -t build:dev`
 2. `npx nx run @example-app/hello:build:dev --graph`
-3. `npx nx watch:serve @example-lib/components` or `npx nx run @example-lib/components:watch:serve` and other libs
-4. open another terminal. `npx nx watch:serve @example-app/hello` or `npx nx run @example-app/hello:watch:serve`
+3. `npx nx watch:serve:dev @example-lib/components` or `npx nx run @example-lib/components:watch:serve:dev` and other libs
+4. open another terminal. `npx nx watch:serve:dev @example-app/hello` or `npx nx run @example-app/hello:watch:serve:dev`
 
 ## Architecture
 
 ### Concept
 
-- `apps`, applications' entry
-- `libs`, applications' module
+- `apps`, application project type
+- `libs`, library project type
 
 See [Applications and libraries](https://nx.dev/more-concepts/applications-and-libraries)
 

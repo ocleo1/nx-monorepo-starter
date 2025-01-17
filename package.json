@@ -3,7 +3,6 @@
   "scripts": {
     "build": "nx run-many -t build",
     "build:dev": "nx run-many -t build:dev",
-    "serve": "nx run-many -t serve",
     "lint": "nx run-many -t lint",
     "lint:fix": "nx run-many -t lint:fix"
   },

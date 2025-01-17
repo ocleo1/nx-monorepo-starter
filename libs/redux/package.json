@@ -10,8 +10,6 @@
     "build": "npm run compile:esm && npm run compile:cjs",
     "build:dev": "npm run build",
     "watch:build": "npm run compile:esm -- -watch && npm run compile:cjs -- -watch",
-    "serve": "npm run build",
-    "watch:serve": "npm run watch:build",
     "lint": "eslint src",
     "lint:fix": "eslint --fix src"
   },

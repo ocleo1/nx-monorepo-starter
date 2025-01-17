@@ -1,0 +1,14 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "root": "apps/hello",
+  "sourceRoot": "apps/hello/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "dependsOn": ["^build", "^build:css"]
+    },
+    "build:dev": {
+      "dependsOn": ["^build:dev", "^build:css"]
+    }
+  }
+}

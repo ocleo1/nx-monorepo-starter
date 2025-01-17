@@ -12,8 +12,6 @@
     "watch:build": "npm run compile:esm -- -watch && npm run compile:cjs -- -watch",
     "build:css": "sass styles/bar.scss:dist/styles.css",
     "watch:css": "npm run build:css -- --watch",
-    "serve": "npm run build",
-    "watch:serve": "npm run watch:build",
     "lint": "eslint src",
     "lint:fix": "eslint --fix src"
   },
