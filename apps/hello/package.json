@@ -4,9 +4,8 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
     "build:dev": "cross-env NODE_ENV=development webpack",
-    "serve": "cross-env NODE_ENV=production webpack serve --open",
-    "serve:dev": "cross-env NODE_ENV=development webpack serve --open",
-    "watch:serve:dev": "npm run serve:dev -- --hot",
+    "serve": "webpack serve --open",
+    "watch:serve": "webpack serve --open --hot",
     "lint": "eslint src",
     "lint:fix": "eslint --fix src"
   },

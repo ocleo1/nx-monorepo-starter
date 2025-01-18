@@ -9,7 +9,7 @@ export default function One() {
 
   return (
     <div>
-      <span>World</span>
+      <span className="text-blue-600">World</span>
       <span>{color}</span>
     </div>
   );

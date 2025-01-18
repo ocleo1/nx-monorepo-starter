@@ -1,3 +1,5 @@
+const path = require("node:path");
+
 /** @type {import('postcss-load-config').Config} */
 module.exports = {
   plugins: {
@@ -5,7 +7,9 @@ module.exports = {
     'postcss-import': {},
     // https://tailwindcss.com/docs/using-with-preprocessors#nesting
     'tailwindcss/nesting': 'postcss-nested',
-    tailwindcss: {},
+    tailwindcss: {
+      config: path.resolve(__dirname, 'tailwind.config.js')
+    },
     autoprefixer: {}
   }
 };

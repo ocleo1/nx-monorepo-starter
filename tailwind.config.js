@@ -1,8 +1,15 @@
+const path = require("node:path");
 const { fontFamily } = require("tailwindcss/defaultTheme");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: "class",
+  content: [
+    path.resolve(__dirname, 'apps/hello/src/**/*.{js,jsx,ts,tsx}'),
+    path.resolve(__dirname, 'apps/world/src/**/*.{js,jsx,ts,tsx}'),
+    path.resolve(__dirname, 'libs/foo/src/**/*.{js,jsx,ts,tsx}'),
+    path.resolve(__dirname, 'libs/bar/src/**/*.{js,jsx,ts,tsx}'),
+  ],
   // https://github.com/shadcn-ui/ui/issues/515#issuecomment-1575392415
   safelist: ["dark"],
   theme: {

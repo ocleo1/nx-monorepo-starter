@@ -46,8 +46,8 @@ If webpack is not bundling css from node_modules, see below
 
 1. `npx nx run-many -t build:dev`
 2. `npx nx run @example-app/hello:build:dev --graph`
-3. `npx nx watch:serve:dev @example-lib/components` or `npx nx run @example-lib/components:watch:serve:dev` and other libs
-4. open another terminal. `npx nx watch:serve:dev @example-app/hello` or `npx nx run @example-app/hello:watch:serve:dev`
+3. `npx nx watch:serve @example-lib/components` or `npx nx run @example-lib/components:watch:serve` and other libs
+4. open another terminal. `npx nx watch:serve @example-app/hello` or `npx nx run @example-app/hello:watch:serve`
 
 ## Architecture
 
