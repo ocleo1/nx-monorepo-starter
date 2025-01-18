@@ -1,6 +1,8 @@
 {
   "name": "nx-monorepo-starter",
   "scripts": {
+    "nx:run": "cross-env NODE_ENV=production nx run",
+    "nx:run:dev": "cross-env NODE_ENV=development nx run",
     "build": "nx run-many -t build",
     "build:dev": "nx run-many -t build:dev",
     "lint": "nx run-many -t lint",

@@ -129,14 +129,6 @@ const dev = {
   output: {
     filename: "[name].bundle.js",
   },
-  devServer: {
-    host: '0.0.0.0',
-    historyApiFallback: true,
-    headers: {
-      "Access-Control-Allow-Origin": "*"
-    },
-    hot: true
-  },
   watchOptions: {
     ignored: /node_modules/,
     aggregateTimeout: 500, // delay before reloading

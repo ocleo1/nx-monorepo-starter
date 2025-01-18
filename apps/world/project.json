@@ -5,10 +5,29 @@
   "projectType": "application",
   "targets": {
     "build": {
-      "dependsOn": ["^build", "^build:css"]
+      "dependsOn": ["^build", "^build:css"],
+      "executor": "@nx/webpack:webpack",
+      "options": {
+        "outputPath": "apps/world/dist",
+        "postcssConfig": "postcss.config.js",
+        "webpackConfig": "apps/world/webpack.config.js"
+      }
     },
-    "build:dev": {
-      "dependsOn": ["^build:dev", "^build:css"]
+    "serve": {
+      "executor": "@nx/webpack:dev-server",
+      "options": {
+        "buildTarget": "build",
+        "host": "0.0.0.0",
+        "port": 3101,
+        "allowedHosts": "*",
+        "open": true
+      }
+    },
+    "lint:fix": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "fix": true
+      }
     }
   }
 }

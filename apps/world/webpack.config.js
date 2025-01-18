@@ -1,33 +1,40 @@
 const path = require("node:path");
 const { merge } = require('webpack-merge');
+const { composePlugins, withNx } = require('@nx/webpack');
 const getConfig = require("../../webpack.base");
 
 
 const base = getConfig(__dirname);
 
-/** @type {import('webpack').Configuration} */
-module.exports = merge(
-  // base
-  base,
-  // project specific
-  {
-    entry: {
-      world: './src/App.tsx'
-    },
-    resolve: {
-      alias: {
-        "@/components": path.resolve(__dirname, 'src/components/'),
-        "@/utils": path.resolve(__dirname, 'src/utils.ts')
+/**
+ * https://nx.dev/recipes/webpack/webpack-config-setup#nxenhanced-configuration-with-composable-plugins
+ * @type {import('webpack').Configuration}
+ */
+module.exports = composePlugins(
+  // Default Nx composable plugin
+  withNx(),
+  // Custom composable plugin
+  (config) => {
+    // `config` is the Webpack configuration object
+    // customize configuration here
+    const customConfig = merge(
+      base,
+      // project specific
+      {
+        entry: {
+          world: './src/App.tsx'
+        },
+        output: {
+          path: config.output.path
+        },
+        resolve: {
+          alias: {
+            "@/components": path.resolve(__dirname, 'src/components/'),
+            "@/utils": path.resolve(__dirname, 'src/utils.ts')
+          }
+        }
       }
-    }
-  },
-  // environment specific
-  process.env.NODE_ENV === "production"
-    ? {}
-    : {
-      devServer: {
-        port: 3101,
-        static: path.resolve(__dirname, "dist")
-      }
-    }
+    );
+    return { ...config, ...customConfig };
+  }
 );
