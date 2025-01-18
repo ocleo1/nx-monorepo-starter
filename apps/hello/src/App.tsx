@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route, useRoutes } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
-import { InjectReducer } from './HOC/InjectReducer';
+import InjectReducer from './HOC/InjectReducer';
 import { helloStore } from './store';
 
 import './index.css';
