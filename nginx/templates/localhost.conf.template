@@ -1,0 +1,48 @@
+server {
+    listen  80;
+    server_name  localhost 127.0.0.1;
+
+    charset  utf-8;
+
+    # https://juejin.im/post/6844904002979627016
+    gzip_static  on;
+    gzip_vary  on;
+    gzip_buffers  32  4K;
+    gzip_types  text/plain application/javascript application/x-javascript text/css application/xml text/javascript;
+
+    access_log  /var/log/nginx/localhost.log  main;
+
+    error_page  404  /404.html;
+
+    # redirect server error pages to the static page /50x.html
+    #
+    error_page  500 502 503 504  /50x.html;
+
+    location = /health {
+        access_log off;
+        add_header 'Content-Type' 'text/plain';
+        return  200  "OK";
+    }
+
+    # https://vitepress.dev/guide/deploy#nginx
+    location ~* \.(html|css|js|json|ico|svg|png|jpg|jpeg|txt)$ {
+        # content location
+        root  /usr/share/nginx/html;
+
+        # exact matches -> reverse clean urls -> folders -> not found
+        try_files $uri $uri.html $uri/ =404;
+
+        # a folder without index.html raises 403 in this setup
+        error_page 403 /404.html;
+
+        # adjust caching headers
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+    }
+
+    location / {
+        root  /usr/share/nginx/html;
+        index  index.html index.htm;
+        try_files $uri $uri/ /index.html;
+    }
+}
