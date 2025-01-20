@@ -1,44 +1,44 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { userReducerMap } from '@example-lib/redux';
 import commonReducer from './slice';
-import oneReducer from './pages/One/slice';
+import oneReducer from '../pages/One/slice';
 
 import type { Reducer } from '@reduxjs/toolkit';
 import type { CommonState } from './slice';
-import type { OneState } from './pages/One/slice';
+import type { OneState } from '../pages/One/slice';
 
 
-const fooReducer: FooReducer = combineReducers({
+const barReducer: BarReducer = combineReducers({
   common: commonReducer,
   one: oneReducer
 });
 
-export const fooReducerMap: FooReducerMap = {
-  foo: fooReducer
+export const barReducerMap: BarReducerMap = {
+  bar: barReducer
 };
 
 // ======
 // Types
 // ======
 
-export interface FooReducerMap {
-  foo: FooReducer;
+export interface BarReducerMap {
+  bar: BarReducer;
 }
 
-export type FooReducer = Reducer<FooShape>;
+export type BarReducer = Reducer<BarShape>;
 
-export interface FooShapeMap {
-  foo: FooShape;
+export interface BarShapeMap {
+  bar: BarShape;
 }
 
-export interface FooShape {
+export interface BarShape {
   common: CommonState;
   one: OneState;
 }
 
 // Only for RootState and AppDispatch types generation
 const store = configureStore({
-  reducer: { ...userReducerMap, ...fooReducerMap }
+  reducer: { ...userReducerMap, ...barReducerMap }
 });
 
 export type RootState = ReturnType<typeof store.getState>;

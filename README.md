@@ -64,8 +64,13 @@ See [Applications and libraries](https://nx.dev/more-concepts/applications-and-l
 libs
 |_<module_name>
   |_src
-  | |_components           /* optional, module common components */
+  | |_api                  /* optional, module apis */
   | |_constants            /* optional, module common constants */
+  | |_components           /* optional, module common components */
+  | |_reducer              /* optional, module redux */
+  | | |_slice.ts           /* optional, module common slice */
+  | | |_index.ts           /* module reducer */
+  | | |_thunks.ts          /* optional, common thunks */
   | |_pages
   | | |_Page1
   | |   |_components       /* page components */
@@ -75,10 +80,8 @@ libs
   | |   |_index.tsx        /* page entry */
   | |   |_slice.ts         /* optional, page slice */
   | |   |_thunks.ts        /* optional, page thunks */
-  | |_slice.ts             /* optional, module common slice */
   | |_index.ts             /* module entry */
   | |_routes.tsx           /* module routes */
-  | |_reducer.ts           /* module reducer */
   |_styles                 /* module styles */
   |_package.json
   |_tsconfig-cjs.json      /* transpile cjs */
