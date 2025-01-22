@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
-import { fooReducerMap } from '@example-lib/foo';
 import { isSamePrefix } from '@example-lib/utils';
 import { injectModuleReducer } from '../store';
 
@@ -13,7 +12,12 @@ export default function InjectReducer({ children }: InjectReducerProps) {
 
   useEffect(() => {
     if (isSamePrefix(pathname, 'foo') && !isSamePrefix(prevPathname.current, 'foo')) {
-      injectModuleReducer(fooReducerMap);
+      import(
+        /* webpackChunkName: "foo" */
+        '@example-lib/foo'
+      ).then(
+        ({ fooReducerMap }) => injectModuleReducer(fooReducerMap)
+      );
     }
     prevPathname.current = pathname;
   }, [pathname]);
