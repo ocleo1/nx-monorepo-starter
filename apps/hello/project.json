@@ -8,6 +8,7 @@
       "dependsOn": ["^build", "^build:css"],
       "executor": "@nx/webpack:webpack",
       "options": {
+        "index": "index.html",
         "outputPath": "apps/hello/dist",
         "postcssConfig": "postcss.config.js",
         "webpackConfig": "apps/hello/webpack.config.js"
@@ -20,7 +21,8 @@
         "host": "0.0.0.0",
         "port": 3100,
         "allowedHosts": "*",
-        "open": true
+        "open": true,
+        "hmr": true
       }
     },
     "lint:fix": {

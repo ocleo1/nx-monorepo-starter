@@ -12,6 +12,10 @@ const isProd = process.env.NODE_ENV === "production";
 /** @type {import('webpack').Configuration} */
 const common = {
   output: {
+    // without it, bundle path in index.html is `<script src="hello.bundle.js"></script>`
+    // when visits `/foo/one`, dev server will request `/foo/hello.bundle.js`
+    // 404 occurs
+    publicPath: "/",
     clean: true
   },
   module: {
