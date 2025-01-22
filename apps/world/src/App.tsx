@@ -24,9 +24,7 @@ export default function App() {
       <Provider store={worldStore}>
         <InjectReducer>
           <Suspense fallback={<div>Loading...</div>}>
-            <Routes>
-              <Route path="/bar/*" element={<BarRoutes />} />
-            </Routes>
+            <BarRoutes />
           </Suspense>
         </InjectReducer>
       </Provider>

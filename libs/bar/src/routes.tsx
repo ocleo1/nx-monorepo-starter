@@ -4,12 +4,17 @@ import type { RouteObject } from 'react-router-dom';
 
 const routes: RouteObject[] = [
   {
-    index: true,
-    element: <PageOne />
-  },
-  {
-    path: 'one',
-    element: <PageOne />
+    path: 'bar',
+    children: [
+      {
+        index: true,
+        element: <PageOne />
+      },
+      {
+        path: 'one',
+        element: <PageOne />
+      }
+    ]
   }
 ];
 

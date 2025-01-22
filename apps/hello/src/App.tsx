@@ -24,9 +24,7 @@ export default function App() {
       <Provider store={helloStore}>
         <InjectReducer>
           <Suspense fallback={<div>Loading...</div>}>
-            <Routes>
-              <Route path="/foo/*" element={<FooRoutes />} />
-            </Routes>
+            <FooRoutes />
           </Suspense>
         </InjectReducer>
       </Provider>
