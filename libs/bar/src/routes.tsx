@@ -1,3 +1,4 @@
+import { BAR_PREFIX } from './constants';
 import Layout from './pages/layout';
 import Landing from './pages/landing';
 import PageOne from './pages/one';
@@ -6,7 +7,7 @@ import type { RouteObject } from 'react-router-dom';
 
 const routes: RouteObject[] = [
   {
-    path: 'bar',
+    path: BAR_PREFIX,
     element: <Layout />,
     children: [
       {
