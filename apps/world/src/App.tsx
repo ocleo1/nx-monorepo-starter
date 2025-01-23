@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 
 import InjectReducer from './HOC/InjectReducer';
 import { worldStore } from './store';
+import One from './pages/one';
 
 import './index.css';
 // https://www.thehalftimecode.com/sharing-tailwind-css-and-components-across-apps-in-a-monorepo/
@@ -23,6 +24,11 @@ export default function App() {
     <BrowserRouter>
       <Provider store={worldStore}>
         <InjectReducer>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Routes>
+              <Route path="/world/*" element={<One />} />
+            </Routes>
+          </Suspense>
           <Suspense fallback={<div>Loading...</div>}>
             <BarRoutes />
           </Suspense>

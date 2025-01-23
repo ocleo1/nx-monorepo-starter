@@ -1,11 +1,11 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { userReducerMap } from '@example-lib/redux';
 import commonReducer from './slice';
-import oneReducer from '../pages/One/slice';
+import oneReducer from '../pages/one/slice';
 
 import type { Reducer } from '@reduxjs/toolkit';
 import type { CommonState } from './slice';
-import type { OneState } from '../pages/One/slice';
+import type { OneState } from '../pages/one/slice';
 
 
 const fooReducer: FooReducer = combineReducers({
