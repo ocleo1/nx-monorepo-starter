@@ -10,7 +10,7 @@
     "build": "npm run compile:esm && npm run compile:cjs",
     "build:dev": "npm run build",
     "watch:build": "npm run compile:esm -- -watch && npm run compile:cjs -- -watch",
-    "build:css": "postcss styles/foo.css -o dist/styles.css",
+    "build:css": "postcss styles/index.css -o dist/styles.css",
     "watch:css": "npm run build:css -- --watch",
     "lint": "eslint src",
     "lint:fix": "eslint --fix src"
